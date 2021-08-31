@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const DefualtButton = styled.button`
-  background: #645cff;
+  background: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 0.25rem;
@@ -17,6 +17,6 @@ export const DefualtButton = styled.button`
 export const HipsterButton = styled(DefualtButton)`
   width: 400px;
   background: transparent;
-  color: #645cff;
-  border: 1px solid #645cff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 `;
