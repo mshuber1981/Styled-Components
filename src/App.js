@@ -1,20 +1,56 @@
+import { useState, useEffect } from "react";
+import styled, { ThemeProvider } from "styled-components";
 import BasicTitle from "./components/BasicTitle";
 import { DefualtButton, HipsterButton } from "./components/Buttons";
 import ComplexTitle from "./components/ComplexTitle";
 import Card from "./components/Card";
+import GlobalStyles from "./GlobalStyles";
 
-// Detect Darkmode
-console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
+const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const baseTheme = {
+  color: "#222",
+  background: "#fff",
+};
+
+const darkTheme = {
+  color: "#fff",
+  background: "#222",
+};
+
+const Container = styled.div`
+  color: ${({ theme }) => theme.color};
+  background: ${({ theme }) => theme.background};
+`;
 
 export default function App() {
+  const [theme, setTheme] = useState(baseTheme);
+
+  function toggleTheme() {
+    theme === baseTheme ? setTheme(darkTheme) : setTheme(baseTheme);
+  }
+
+  useEffect(function () {
+    if (dark) {
+      setTheme(darkTheme);
+    } else {
+      setTheme(baseTheme);
+    }
+  }, []);
+
   return (
     <div>
-      <BasicTitle>Styled Components</BasicTitle>
-      <BasicTitle special>Special Styled Component</BasicTitle>
-      <DefualtButton>Styled Button</DefualtButton>
-      <HipsterButton>Hipster Button</HipsterButton>
-      <ComplexTitle title={"Complex Title"} />
-      <Card />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Container>
+          <BasicTitle>Styled Components</BasicTitle>
+          <BasicTitle special>Special Styled Component</BasicTitle>
+          <DefualtButton>Styled Button</DefualtButton>
+          <HipsterButton onClick={toggleTheme}>Hipster Button</HipsterButton>
+          <ComplexTitle title={"Complex Title"} />
+          <Card />
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
