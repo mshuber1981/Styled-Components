@@ -13,16 +13,18 @@ const StyledCard = styled.article`
     border-top-right-radius: 0.25rem;
   }
   footer {
+    background: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    height: 4rem;
     h4 {
       text-transform: capitalize;
       /* Target h4 */
       &::before {
         content: "Name : ";
-        color: red;
+        color: var(--primary-color);
       }
     }
     p {
