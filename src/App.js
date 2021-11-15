@@ -21,6 +21,7 @@ const darkTheme = {
 const Container = styled.div`
   color: ${({ theme }) => theme.color};
   background: ${({ theme }) => theme.background};
+  min-height: 100vh;
 `;
 
 export default function App() {
@@ -46,7 +47,9 @@ export default function App() {
           <BasicTitle>Styled Components</BasicTitle>
           <BasicTitle special>Special Styled Component</BasicTitle>
           <DefualtButton>Styled Button</DefualtButton>
-          <HipsterButton onClick={toggleTheme}>Hipster Button</HipsterButton>
+          <HipsterButton onClick={toggleTheme}>
+            Toggle Theme ({theme === baseTheme ? "Light" : "Dark"})
+          </HipsterButton>
           <ComplexTitle title={"Complex Title"} />
           <Card />
         </Container>
