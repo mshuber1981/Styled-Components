@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     width: 5rem;
     height: 0.25rem;
     background: var(--primary-color);
-    margin: 0 auto;
+    margin: 0.5rem auto;
   }
 `;
 
