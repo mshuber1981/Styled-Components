@@ -23,7 +23,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.color};
   background: ${({ theme }) => theme.background};
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
