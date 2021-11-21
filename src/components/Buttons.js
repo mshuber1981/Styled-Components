@@ -9,13 +9,13 @@ export const DefualtButton = styled.button`
   text-transform: capitalize;
   padding: 0.25rem;
   display: block;
-  width: 200px;
+  width: 10rem;
   margin: 1rem auto;
 `;
 
 // Extending DefaultButton with additional styles
 export const HipsterButton = styled(DefualtButton)`
-  width: 400px;
+  width: 15rem;
   background: transparent;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
