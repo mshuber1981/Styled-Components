@@ -4,6 +4,7 @@ import BasicTitle from "./components/BasicTitle";
 import { DefualtButton, HipsterButton } from "./components/Buttons";
 import ComplexTitle from "./components/ComplexTitle";
 import Card from "./components/Card";
+import Loading from "./components/Loading";
 import GlobalStyles from "./GlobalStyles";
 
 const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -22,6 +23,10 @@ const Container = styled.div`
   color: ${({ theme }) => theme.color};
   background: ${({ theme }) => theme.background};
   min-height: 100vh;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default function App() {
@@ -52,6 +57,7 @@ export default function App() {
           </HipsterButton>
           <ComplexTitle title={"Complex Title"} />
           <Card />
+          <Loading />
         </Container>
       </ThemeProvider>
     </div>
