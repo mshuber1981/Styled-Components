@@ -6,16 +6,19 @@ import { DefaultButton, HipsterButton } from "./components/Buttons";
 import ComplexTitle from "./components/ComplexTitle";
 import Card from "./components/Card";
 import Loading from "./components/Loading";
+import Form from "./components/Form";
 import GlobalStyles from "./GlobalStyles";
 
 const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const baseTheme = {
+  name: "light",
   color: "#222",
   background: "#fff",
 };
 
 const darkTheme = {
+  name: "dark",
   color: "#fff",
   background: "#222",
 };
@@ -74,6 +77,7 @@ export default function App() {
           >
             <h2>Hello World</h2>
           </div>
+          <Form />
         </Container>
       </ThemeProvider>
     </div>
