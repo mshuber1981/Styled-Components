@@ -30,7 +30,7 @@ const Button = styled.button.attrs((props) => {
 export default function Form() {
   return (
     <StyledDiv>
-      <Button onClick={() => alert(`type="button`)}>Regular Button</Button>
+      <Button onClick={() => alert(`type="button"`)}>Regular Button</Button>
       <form>
         <h2>Form</h2>
         <input type="text" />
