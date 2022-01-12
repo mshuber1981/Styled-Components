@@ -1,4 +1,5 @@
-import styled from "styled-components";
+// https://styled-components.com/docs/tooling#babel-macro
+import styled, { css } from "styled-components/macro";
 
 const StyledDiv = styled.div`
   min-width: 30vw;
@@ -25,6 +26,32 @@ const Button = styled.button.attrs((props) => {
   padding: 0.25rem;
   margin: 0.5rem 0;
   cursor: pointer;
+  ${({ type }) => {
+    return (
+      type === "submit" &&
+      // https://styled-components.com/docs/api#css-prop
+      css`
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 0.25rem;
+      `
+    );
+  }}
+`;
+
+const StyledInput = styled.input.attrs((props) => {
+  return {
+    type: props.type || "text",
+    placeholder: props.placeholder || "Please enter value",
+  };
+})`
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: 2px solid #f2f4f8;
+  border-radius: 0.25rem;
+  width: 100%;
+  margin-top: 1rem;
 `;
 
 export default function Form() {
@@ -33,7 +60,8 @@ export default function Form() {
       <Button onClick={() => alert(`type="button"`)}>Regular Button</Button>
       <form>
         <h2>Form</h2>
-        <input type="text" />
+        <StyledInput />
+        <StyledInput type="email" placeholder="Enter email" />
         <Button type="submit">Submit Button</Button>
       </form>
     </StyledDiv>
