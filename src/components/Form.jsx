@@ -6,7 +6,7 @@ const StyledDiv = styled.div`
   background: ${({ theme }) => (theme.name === "light" ? "#222" : "#fff")};
   color: ${({ theme }) => (theme.name === "light" ? "#fff" : "#222")};
   padding: 2rem;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   h2 {
     margin: 0.5rem 0;
   }
