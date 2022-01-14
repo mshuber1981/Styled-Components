@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 // https://styled-components.com/docs/tooling#babel-macro
 import styled, { ThemeProvider } from "styled-components/macro";
+import GlobalStyles from "./GlobalStyles";
 import BasicTitle from "./components/BasicTitle";
 import { DefaultButton, HipsterButton } from "./components/Buttons";
 import ComplexTitle from "./components/ComplexTitle";
 import Card from "./components/Card";
 import Loading from "./components/Loading";
 import Form from "./components/Form";
-import GlobalStyles from "./GlobalStyles";
+import List from "./components/List";
+import Products from "./components/Products";
 
 const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -65,7 +67,7 @@ export default function App() {
           <DefaultButton large onClick={() => alert("I am a huge button!")}>
             I am a large button
           </DefaultButton>
-          <ComplexTitle title={"Complex Title"} />
+          <ComplexTitle title={"Complex Title"} element="h1" />
           <Card />
           <Loading />
           {/* https://styled-components.com/docs/api#css-prop */}
@@ -78,6 +80,8 @@ export default function App() {
             <h2>Hello World</h2>
           </div>
           <Form />
+          <List />
+          <Products />
         </Container>
       </ThemeProvider>
     </div>
