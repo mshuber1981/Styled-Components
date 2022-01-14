@@ -14,10 +14,10 @@ const Wrapper = styled.div`
   }
 `;
 
-export default function ComplexTitle({ title }) {
+export default function ComplexTitle({ title, element }) {
   return (
     <Wrapper>
-      <h1>{title}</h1>
+      {element === "h1" ? <h1>{title}</h1> : <h2>{title}</h2>}
       <div className="underline"></div>
     </Wrapper>
   );
